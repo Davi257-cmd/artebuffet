@@ -93,7 +93,7 @@ Orçamento estimado: R$ ${total.toLocaleString("pt-BR", { minimumFractionDigits:
 
 Posso prosseguir?`;
 
-    const whatsappUrl = `https://wa.me/5585999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/558598730867?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
     
     toast.success("Redirecionando para WhatsApp...");
@@ -333,7 +333,7 @@ Posso prosseguir?`;
                           type="tel"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          placeholder="(85) 99999-9999"
+                          placeholder="(85) 98873-0867"
                           className="mt-2"
                           required
                         />

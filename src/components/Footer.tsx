@@ -58,8 +58,8 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
-                <a href="tel:+5585999999999" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors touch-manipulation">
-                  (85) 99999-9999
+                <a href="https://wa.me/5585988740867" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors touch-manipulation">
+                  (85) 98874-0867
                 </a>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground">Capacidade: 150 pessoas</p>
@@ -79,8 +79,8 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
-                <a href="tel:+5585988888888" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors touch-manipulation">
-                  (85) 98888-8888
+                <a href="https://wa.me/5585988740867" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors touch-manipulation">
+                  (85) 98874-0867
                 </a>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground">Capacidade: 200 pessoas</p>

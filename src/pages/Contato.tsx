@@ -35,7 +35,7 @@ Telefone: ${formData.phone || "Não informado"}
 Mensagem:
 ${formData.message}`;
 
-    const whatsappUrl = `https://wa.me/5585999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5585988740867?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
     
     toast.success("Redirecionando para WhatsApp...");
@@ -49,14 +49,14 @@ ${formData.message}`;
       title: "Espaço Damas",
       items: [
         { icon: MapPin, text: "Rua das Damas, 1234 - Aldeota, Fortaleza - CE" },
-        { icon: Phone, text: "(85) 99999-9999", link: "tel:+5585999999999" },
+        { icon: Phone, text: "(85) 98874-0867", link: "https://wa.me/5585988740867" },
       ],
     },
     {
       title: "Espaço Jóquei",
       items: [
         { icon: MapPin, text: "Av. Jóquei Clube, 5678 - Jóquei Clube, Fortaleza - CE" },
-        { icon: Phone, text: "(85) 98888-8888", link: "tel:+5585988888888" },
+        { icon: Phone, text: "(85) 98874-0867", link: "https://wa.me/5585988740867" },
       ],
     },
   ];
@@ -115,7 +115,7 @@ ${formData.message}`;
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="(85) 99999-9999"
+                      placeholder="(85) 98874-0867"
                       className="mt-2"
                     />
                   </div>
@@ -161,7 +161,9 @@ ${formData.message}`;
                           {item.link ? (
                             <a
                               href={item.link}
-                              className="text-muted-foreground hover:text-primary transition-colors pt-2"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-muted-foreground hover:text-primary transition-colors pt-2 touch-manipulation"
                             >
                               {item.text}
                             </a>
