@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Arte Buffet Design System - Cores da Marca */
+    /* #63421c (marrom escuro) e #c9c0b8 (bege claro) */
+    
+    --background: 32 12% 95%; /* Bege muito claro baseado em #c9c0b8 */
+    --foreground: 32 56% 25%; /* Marrom escuro #63421c */
+
+    --card: 0 0% 100%; /* Branco Puro */
+    --card-foreground: 32 56% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 32 56% 25%;
+
+    /* Marrom Escuro - Cor principal da marca #63421c */
+    --primary: 32 56% 25%; /* #63421c */
+    --primary-foreground: 0 0% 100%;
+
+    /* Bege Claro - Secundária #c9c0b8 */
+    --secondary: 32 12% 75%; /* #c9c0b8 */
+    --secondary-foreground: 32 56% 25%;
+
+    /* Bege Suave - Backgrounds alternados */
+    --muted: 32 12% 88%; /* Versão mais clara do bege */
+    --muted-foreground: 32 15% 45%; /* Texto legível sobre bege */
+
+    /* Accent - Tom intermediário entre as cores */
+    --accent: 32 35% 50%; /* Tom médio entre marrom e bege */
+    --accent-foreground: 0 0% 100%;
+
+    /* Bege Claro - Backgrounds elegantes */
+    --gold-light: 32 12% 75%; /* #c9c0b8 */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 32 12% 80%; /* Borda baseada no bege */
+    --input: 32 12% 85%;
+    --ring: 32 56% 25%; /* Ring baseado no marrom escuro */
+
+    --radius: 0.75rem;
+
+    /* Gradientes usando as cores da marca */
+    --gradient-gold: linear-gradient(135deg, hsl(32 56% 25%) 0%, hsl(32 12% 75%) 100%);
+    --gradient-blush: linear-gradient(180deg, hsl(32 12% 88%) 0%, hsl(32 12% 75%) 100%);
+    
+    /* Sombras elegantes usando a cor principal */
+    --shadow-elegant: 0 10px 40px -10px hsl(32 56% 25% / 0.25);
+    --shadow-glow: 0 0 60px hsl(32 56% 25% / 0.15);
+    
+    /* Transições suaves */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 32 15% 12%;
+    --foreground: 32 12% 85%;
+
+    --card: 32 15% 15%;
+    --card-foreground: 32 12% 85%;
+
+    --popover: 32 15% 15%;
+    --popover-foreground: 32 12% 85%;
+
+    --primary: 32 12% 75%; /* Bege claro no dark mode */
+    --primary-foreground: 32 56% 25%;
+
+    --secondary: 32 56% 25%; /* Marrom escuro no dark mode */
+    --secondary-foreground: 32 12% 85%;
+
+    --muted: 32 15% 20%;
+    --muted-foreground: 32 12% 70%;
+
+    --accent: 32 35% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 32 15% 25%;
+    --input: 32 15% 25%;
+    --ring: 32 12% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  /* Tipografia responsiva */
+  h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  }
+
+  p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Touch targets - mínimo 44x44px para mobile */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  @media (min-width: 768px) {
+    button, a, [role="button"] {
+      min-height: auto;
+      min-width: auto;
+    }
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    @apply backdrop-blur-md bg-white/80 border border-white/20;
+  }
+
+  /* Hover scale animation */
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  /* Text gradient gold */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-primary via-gold-light to-primary bg-clip-text text-transparent;
+  }
+
+  /* Elegant shadow */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Touch manipulation - remove delay on mobile */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Safe area padding for mobile devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Responsive spacing utilities */
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
